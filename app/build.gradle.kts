@@ -50,4 +50,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01") // swipe to refresh
+
+    implementation("com.github.bumptech.glide:glide:4.16.0") // glide
 }
