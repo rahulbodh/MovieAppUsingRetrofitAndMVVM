@@ -3,6 +3,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieappwithretrofit.model.Movie" />
+    </data>
+
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -26,14 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@{movie.posterPath}"/>
 
             <TextView
                 android:id="@+id/movieName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/movieImage"
-                android:text="Movie Title"
+                android:text="@{movie.title}"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
@@ -45,6 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/movieName"
+                android:layout_marginTop="3dp"
+                android:text="@{Double.toString(movie.voteAverage)}"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
