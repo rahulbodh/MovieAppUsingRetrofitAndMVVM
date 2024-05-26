@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -72,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         movieAdapter = new MovieAdapter(this, movies);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(movieAdapter);
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         // notify an adapter associated with a RecyclerView
         // that the underlying dataset hase changed
